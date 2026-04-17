@@ -2,6 +2,8 @@
   --primary-color: #e50914;
   --background-color: #121212;
   --card-background: #1f1f1f;
+  --overlay-color: rgba(0, 0, 0, 0.7);
+  --overlay-color-dark: rgba(0, 0, 0, 0.9);
   --text-color: #ffffff;
   --star-color: #f5c518;
   --text-muted: #aaaaaa;
@@ -51,7 +53,7 @@ nav {
 }
 
 .movie-card {
-  background-color: var(--background-color);
+  background-color: var(--card-background);
   text-decoration: none;
   color: var(--text-color);
   border-radius: 8px;
@@ -170,15 +172,39 @@ nav {
   color: var(--text-muted);
 }
 
-.section-title {
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-}
-
 .no-results {
   padding: 2rem;
   font-size: 1.2rem;
   color: var(--text-muted);
+}
+
+.movie-card-image {
+  position: relative;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--overlay-color);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.favorite-btn.active {
+  color: var(--primary-color);
+}
+
+.favorite-btn:hover {
+  background: var(--overlay-color-dark);
 }
 
 .star-icon {
